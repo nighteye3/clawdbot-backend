@@ -1,7 +1,16 @@
 {
   "id": "89506869-e868-48c9-9cb4-29cd40bddcd4",
   "user_id": "OcS2O6WjsFCWI1Nc1Y",
-  "title": "new chat",
+  "title": "what is my name?",
   "created_at": "2026-01-31T23:19:00.431Z",
-  "messages": []
+  "messages": [
+    {
+      "id": "76590e8f-eec8-4647-857b-7acb32165606",
+      "chat_id": "89506869-e868-48c9-9cb4-29cd40bddcd4",
+      "content": "what is my name?",
+      "role": "user",
+      "created_at": "2026-01-31T23:19:00.974Z",
+      "is_assistant": false
+    }
+  ]
 }
