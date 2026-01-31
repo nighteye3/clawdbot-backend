@@ -27,6 +27,14 @@
       "role": "user",
       "created_at": "2026-01-31T23:19:46.056Z",
       "is_assistant": false
+    },
+    {
+      "id": "fd456f46-553d-462e-ae8a-f51434a2b002",
+      "chat_id": "98c386d9-a0bb-46ea-9452-fd46627ea539",
+      "content": "I do not have any information about what Sarandha likes to eat.\n",
+      "role": "model",
+      "created_at": "2026-01-31T23:19:46.574Z",
+      "is_assistant": true
     }
   ]
 }
