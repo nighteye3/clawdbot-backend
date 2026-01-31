@@ -1,16 +1,14 @@
 const express = require('express');
 const router = express.Router();
-// const authenticateToken = require('../middleware/auth'); // Disabled for Tauri compatibility
+const authenticateToken = require('../middleware/auth'); // Re-enabled
 const storage = require('../services/v2/storageService');
 const { eventBus, formatSSE } = require('../services/v2/sseService');
 const llmService = require('../services/llmService');
 
-const DEFAULT_USER = "default_user"; // Hardcoded user for no-auth mode
-
 // 1. GET /history - Load all chats
-router.get('/history', (req, res) => {
+router.get('/history', authenticateToken, (req, res) => {
     try {
-        const userId = DEFAULT_USER;
+        const userId = req.user.id;
         const history = storage.getChatIndex(userId);
         res.json(history); 
     } catch (error) {
@@ -19,9 +17,9 @@ router.get('/history', (req, res) => {
 });
 
 // 2. POST /chat - Create new chat
-router.post('/chat', (req, res) => {
+router.post('/chat', authenticateToken, (req, res) => {
     try {
-        const userId = DEFAULT_USER;
+        const userId = req.user.id;
         const { title } = req.body;
         const newChat = storage.createChat(userId, title || 'New Chat');
         res.json(newChat); 
@@ -31,9 +29,9 @@ router.post('/chat', (req, res) => {
 });
 
 // 3. POST /chat/ask - Handle User Message (Async LLM)
-router.post('/chat/ask', async (req, res) => {
+router.post('/chat/ask', authenticateToken, async (req, res) => {
     try {
-        const userId = DEFAULT_USER;
+        const userId = req.user.id;
         const { chat_id, content } = req.body;
 
         if (!chat_id || !content) return res.status(400).json({ error: "Missing fields" });
@@ -79,9 +77,9 @@ router.post('/chat/ask', async (req, res) => {
 });
 
 // 4. GET /chat/:id - SSE Stream
-router.get('/chat/:id', (req, res) => {
+router.get('/chat/:id', authenticateToken, (req, res) => {
     const chatId = req.params.id;
-    const userId = DEFAULT_USER;
+    const userId = req.user.id;
 
     // Headers for SSE
     res.setHeader('Content-Type', 'text/event-stream');

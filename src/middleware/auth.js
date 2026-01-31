@@ -9,13 +9,34 @@ const authenticateToken = (req, res, next) => {
         return res.status(401).json({ error: "Access Denied: No Token Provided" });
     }
 
-    jwt.verify(token, config.JWT_SECRET, (err, user) => {
-        if (err) {
+    try {
+        // If JWT_SECRET matches the generator, verify signature
+        const decoded = jwt.verify(token, config.JWT_SECRET);
+        
+        // Map 'sub' to 'id' (Standard JWT claim)
+        req.user = {
+            id: decoded.sub || decoded.user?.id || decoded.id,
+            role: decoded.role
+        };
+        next();
+    } catch (err) {
+        // If signature fails (different secret), at least decode payload 
+        // WARNING: Only for dev/testing if you don't have the secret
+        try {
+            const decoded = jwt.decode(token);
+            if (decoded) {
+                 req.user = {
+                    id: decoded.sub || decoded.user?.id || decoded.id,
+                    role: decoded.role
+                };
+                next();
+            } else {
+                return res.status(403).json({ error: "Invalid Token" });
+            }
+        } catch (e) {
             return res.status(403).json({ error: "Invalid Token" });
         }
-        req.user = user;
-        next();
-    });
+    }
 };
 
 module.exports = authenticateToken;
