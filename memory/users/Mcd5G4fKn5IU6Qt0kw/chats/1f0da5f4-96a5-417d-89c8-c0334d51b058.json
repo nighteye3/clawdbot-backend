@@ -19,6 +19,14 @@
       "role": "model",
       "created_at": "2026-01-31T23:19:27.984Z",
       "is_assistant": true
+    },
+    {
+      "id": "e0de9d5c-d58b-4ae3-a027-9deea256b867",
+      "chat_id": "1f0da5f4-96a5-417d-89c8-c0334d51b058",
+      "content": "do u know what other users like toeat?",
+      "role": "user",
+      "created_at": "2026-01-31T23:19:58.076Z",
+      "is_assistant": false
     }
   ]
 }
