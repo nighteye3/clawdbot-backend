@@ -7,6 +7,9 @@ const { syncToRemote } = require('./syncService');
 if (!fs.existsSync(config.MEMORY_DIR)) {
     fs.mkdirSync(config.MEMORY_DIR, { recursive: true });
 }
+if (!fs.existsSync(config.MEMORY_JSON_DIR)) {
+    fs.mkdirSync(config.MEMORY_JSON_DIR, { recursive: true });
+}
 
 const getContext = (userId) => {
     // 1. Read Chat History (MD)
@@ -46,7 +49,7 @@ const appendInteraction = (userId, userMsg, assistantMsg) => {
     fs.appendFileSync(mdPath, mdEntry);
     
     // 2. Append to JSON (Structured Data)
-    const jsonPath = path.join(config.MEMORY_DIR, `${userId}.json`);
+    const jsonPath = path.join(config.MEMORY_JSON_DIR, `${userId}.json`);
     let history = [];
     
     try {
