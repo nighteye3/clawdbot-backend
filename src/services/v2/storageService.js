@@ -111,10 +111,32 @@ const getFullContext = (userId, chatId) => {
     return `SYSTEM CONTEXT:\n${profileContext}\n\nCHAT HISTORY:\n${history}`;
 };
 
+// 6. Update Chat Title
+const updateChatTitle = (userId, chatId, newTitle) => {
+    const { base, chats } = getUserDir(userId);
+    
+    // 1. Update Index
+    const index = getChatIndex(userId);
+    const chatEntry = index.find(c => c.id === chatId);
+    if (chatEntry) {
+        chatEntry.title = newTitle;
+        fs.writeFileSync(path.join(base, 'index.json'), JSON.stringify(index, null, 2));
+    }
+
+    // 2. Update Chat File
+    const chatPath = path.join(chats, `${chatId}.json`);
+    if (fs.existsSync(chatPath)) {
+        const data = JSON.parse(fs.readFileSync(chatPath, 'utf8'));
+        data.title = newTitle;
+        fs.writeFileSync(chatPath, JSON.stringify(data, null, 2));
+    }
+};
+
 module.exports = {
     getChatIndex,
     createChat,
     getChatMessages,
     appendMessage,
-    getFullContext
+    getFullContext,
+    updateChatTitle
 };

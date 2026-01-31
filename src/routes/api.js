@@ -39,6 +39,14 @@ router.post('/chat/ask', authenticateToken, async (req, res) => {
         // A. Save User Message
         const userMsg = storage.appendMessage(userId, chat_id, 'user', content);
         
+        // A2. Auto-Update Title (if it's the first actual message)
+        const chatMsgs = storage.getChatMessages(userId, chat_id);
+        if (chatMsgs.length <= 1) { // 1 because we just added the user message
+            // Truncate to ~30 chars
+            const newTitle = content.length > 30 ? content.substring(0, 30) + '...' : content;
+            storage.updateChatTitle(userId, chat_id, newTitle);
+        }
+        
         // B. Emit User Message to SSE (so it appears in UI)
         eventBus.emit(`chat:${chat_id}`, userMsg);
 
@@ -92,8 +100,15 @@ router.get('/chat/:id', authenticateToken, (req, res) => {
 
     eventBus.on(`chat:${chatId}`, listener);
 
+    // Keep-Alive Heartbeat (every 15s)
+    // Matches Rust's keep_alive logic to prevent connection drop
+    const keepAliveInterval = setInterval(() => {
+        res.write(': keep-alive\n\n');
+    }, 15000);
+
     // Cleanup on close
     req.on('close', () => {
+        clearInterval(keepAliveInterval);
         eventBus.off(`chat:${chatId}`, listener);
         res.end();
     });
