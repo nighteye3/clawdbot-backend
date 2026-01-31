@@ -6,7 +6,8 @@ const llmService = require('../services/llmService');
 
 router.post('/', authenticateToken, async (req, res) => {
     try {
-        const userId = req.body.userId || req.user.id;
+        const userPayload = req.user.user || req.user;
+        const userId = req.body.userId || userPayload.id || userPayload.username || 'unknown_user';
         const message = req.body.message;
 
         if (!message) return res.status(400).json({ error: "Message required" });
