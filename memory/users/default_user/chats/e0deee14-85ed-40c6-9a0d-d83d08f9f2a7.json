@@ -1,0 +1,56 @@
+{
+  "id": "e0deee14-85ed-40c6-9a0d-d83d08f9f2a7",
+  "user_id": "default_user",
+  "title": "hello",
+  "created_at": "2026-01-31T22:49:39.221Z",
+  "messages": [
+    {
+      "id": "71a78d2d-adcc-419f-b67a-205b71af41ba",
+      "chat_id": "e0deee14-85ed-40c6-9a0d-d83d08f9f2a7",
+      "content": "hello",
+      "role": "user",
+      "created_at": "2026-01-31T22:49:39.756Z",
+      "is_assistant": false
+    },
+    {
+      "id": "a820c04f-0144-4033-a4cf-a1b35b95dd92",
+      "chat_id": "e0deee14-85ed-40c6-9a0d-d83d08f9f2a7",
+      "content": "Hello! How can I help you today?\n",
+      "role": "model",
+      "created_at": "2026-01-31T22:49:40.260Z",
+      "is_assistant": true
+    },
+    {
+      "id": "4c3ce017-f958-4caa-ab7a-629984d8188b",
+      "chat_id": "e0deee14-85ed-40c6-9a0d-d83d08f9f2a7",
+      "content": "what is my name?",
+      "role": "user",
+      "created_at": "2026-01-31T22:50:17.606Z",
+      "is_assistant": false
+    },
+    {
+      "id": "d273733d-3ce5-4c76-91fe-8f2acadd8942",
+      "chat_id": "e0deee14-85ed-40c6-9a0d-d83d08f9f2a7",
+      "content": "I do not have access to your name. I only have access to our conversation history.\n",
+      "role": "model",
+      "created_at": "2026-01-31T22:50:18.031Z",
+      "is_assistant": true
+    },
+    {
+      "id": "e74aecda-8a1f-4f45-bf7f-16a02cd862a4",
+      "chat_id": "e0deee14-85ed-40c6-9a0d-d83d08f9f2a7",
+      "content": "okay okay",
+      "role": "user",
+      "created_at": "2026-01-31T22:50:21.256Z",
+      "is_assistant": false
+    },
+    {
+      "id": "f0b33852-a8f7-401e-b593-37aa7bd2d940",
+      "chat_id": "e0deee14-85ed-40c6-9a0d-d83d08f9f2a7",
+      "content": "Okay okay. Is there anything I can help you with?\n",
+      "role": "model",
+      "created_at": "2026-01-31T22:50:21.749Z",
+      "is_assistant": true
+    }
+  ]
+}

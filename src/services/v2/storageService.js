@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('../../config/env');
 const { v4: uuidv4 } = require('uuid');
+const { syncToRemote } = require('../syncService');
 
 // Ensure base dir exists
 if (!fs.existsSync(config.MEMORY_DIR)) {
@@ -57,6 +58,9 @@ const createChat = (userId, title = "New Chat") => {
     // Create Markdown Log
     fs.writeFileSync(path.join(chats, `${chatId}.md`), `# Chat: ${title}\nID: ${chatId}\nDate: ${timestamp}\n\n`);
 
+    // Sync to GitHub
+    syncToRemote();
+
     return newChatSummary;
 };
 
@@ -96,6 +100,9 @@ const appendMessage = (userId, chatId, role, content) => {
     // Append to Markdown
     const mdEntry = `\n[${timestamp}] **${role.toUpperCase()}**: ${content}\n`;
     fs.appendFileSync(mdPath, mdEntry);
+
+    // Sync to GitHub
+    syncToRemote();
 
     return newMessage;
 };
@@ -137,6 +144,9 @@ const updateChatTitle = (userId, chatId, newTitle) => {
         data.title = newTitle;
         fs.writeFileSync(chatPath, JSON.stringify(data, null, 2));
     }
+    
+    // Sync to GitHub
+    syncToRemote();
 };
 
 module.exports = {
