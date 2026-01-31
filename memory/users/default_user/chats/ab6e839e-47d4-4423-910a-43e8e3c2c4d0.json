@@ -11,6 +11,14 @@
       "role": "user",
       "created_at": "2026-01-31T22:54:07.698Z",
       "is_assistant": false
+    },
+    {
+      "id": "8b52fce4-27ac-431b-8a38-52b1db7fa5a3",
+      "chat_id": "ab6e839e-47d4-4423-910a-43e8e3c2c4d0",
+      "content": "I am sorry, but I cannot access or check any chats beyond our current conversation. I do not have access to any external systems or data.\n",
+      "role": "model",
+      "created_at": "2026-01-31T22:54:08.508Z",
+      "is_assistant": true
     }
   ]
 }
