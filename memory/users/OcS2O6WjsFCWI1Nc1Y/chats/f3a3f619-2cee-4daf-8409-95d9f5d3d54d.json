@@ -1,7 +1,16 @@
 {
   "id": "f3a3f619-2cee-4daf-8409-95d9f5d3d54d",
   "user_id": "OcS2O6WjsFCWI1Nc1Y",
-  "title": "new chat",
+  "title": "what is my name?",
   "created_at": "2026-01-31T23:17:45.830Z",
-  "messages": []
+  "messages": [
+    {
+      "id": "73be6f47-0915-404e-afd1-3c3dc5c85f95",
+      "chat_id": "f3a3f619-2cee-4daf-8409-95d9f5d3d54d",
+      "content": "what is my name?",
+      "role": "user",
+      "created_at": "2026-01-31T23:17:46.590Z",
+      "is_assistant": false
+    }
+  ]
 }
