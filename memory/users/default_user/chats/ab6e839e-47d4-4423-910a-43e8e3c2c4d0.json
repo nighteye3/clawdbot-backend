@@ -35,6 +35,14 @@
       "role": "model",
       "created_at": "2026-01-31T22:56:51.315Z",
       "is_assistant": true
+    },
+    {
+      "id": "dee33cc8-cce1-4614-9f8e-f1cdcfde2877",
+      "chat_id": "ab6e839e-47d4-4423-910a-43e8e3c2c4d0",
+      "content": "i told u my name tho",
+      "role": "user",
+      "created_at": "2026-01-31T22:56:57.917Z",
+      "is_assistant": false
     }
   ]
 }
