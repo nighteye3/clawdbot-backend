@@ -19,6 +19,14 @@
       "role": "model",
       "created_at": "2026-01-31T23:18:55.295Z",
       "is_assistant": true
+    },
+    {
+      "id": "e5ff6249-1bbe-4611-8eb0-19be0b809829",
+      "chat_id": "8b4371af-6dcd-4c7a-b6a6-8966f24dbcb2",
+      "content": "i like to eat pizza",
+      "role": "user",
+      "created_at": "2026-01-31T23:19:19.022Z",
+      "is_assistant": false
     }
   ]
 }
