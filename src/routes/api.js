@@ -4,6 +4,54 @@ const authenticateToken = require('../middleware/auth'); // Re-enabled
 const storage = require('../services/v2/storageService');
 const { eventBus, formatSSE } = require('../services/v2/sseService');
 const llmService = require('../services/llmService');
+const jwt = require('jsonwebtoken');
+const config = require('../config/env');
+const { v4: uuidv4 } = require('uuid');
+
+// 0. Auth & Registration Routes (Compatible with AuthApi.ts)
+
+// POST /register - Save Profile & Return Token
+router.post('/register', (req, res) => {
+    try {
+        const { name, preferences } = req.body;
+        
+        // Generate new User ID
+        const userId = uuidv4();
+        
+        // Save Preferences to profile.md
+        if (preferences) {
+            storage.saveUserProfile(userId, name || "User", preferences);
+        }
+
+        // Generate JWT
+        const token = jwt.sign(
+            { sub: userId, role: 'user', name: name }, 
+            config.JWT_SECRET
+        );
+
+        res.json({ token });
+
+    } catch (error) {
+        console.error("Register Error:", error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// POST /preferences - Update Existing User Preferences (Authenticated)
+router.post('/preferences', authenticateToken, (req, res) => {
+    try {
+        const userId = req.user.id;
+        const { name, preferences } = req.body;
+        
+        if (preferences) {
+            storage.saveUserProfile(userId, name || "User", preferences);
+        }
+
+        res.json({ status: "success", message: "Preferences updated" });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 // 1. GET /history - Load all chats
 router.get('/history', authenticateToken, (req, res) => {

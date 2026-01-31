@@ -144,7 +144,7 @@ const getFullContext = (userId, chatId) => {
     });
 
     return `
-=== SYSTEM / PROFILE ===
+=== SYSTEM / PROFILE (HIGHEST PRIORITY) ===
 ${profileContext}
 
 === FULL MEMORY FROM ALL OTHER CONVERSATIONS ===
@@ -180,11 +180,38 @@ const updateChatTitle = (userId, chatId, newTitle) => {
     syncToRemote();
 };
 
+// 7. Save User Profile & Preferences
+const saveUserProfile = (userId, name, preferences) => {
+    const { base } = getUserDir(userId);
+    const profilePath = path.join(base, 'profile.md');
+
+    // Format preferences as Strict System Instructions
+    const prefText = Object.entries(preferences)
+        .map(([key, val]) => `- **${key.replace(/_/g, ' ').toUpperCase()}**: ${Array.isArray(val) ? val.join(', ') : val}`)
+        .join('\n');
+
+    const content = `
+# USER PROFILE: ${name}
+
+## 🚨 CRITICAL PREFERENCES & CONSTRAINTS 🚨
+(You MUST prioritize these settings above all else in your recommendations)
+
+${prefText}
+
+## UPDATE TIMESTAMP
+${new Date().toISOString()}
+`;
+
+    fs.writeFileSync(profilePath, content);
+    syncToRemote();
+};
+
 module.exports = {
     getChatIndex,
     createChat,
     getChatMessages,
     appendMessage,
     getFullContext,
-    updateChatTitle
+    updateChatTitle,
+    saveUserProfile
 };
