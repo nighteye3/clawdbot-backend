@@ -51,7 +51,7 @@ router.post('/chat/ask', authenticateToken, async (req, res) => {
         eventBus.emit(`chat:${chat_id}`, userMsg);
 
         // C. Reply Immediately (Tauri expects Promise<void>)
-        res.status(200).send();
+        res.status(202).send();
 
         // D. Background: Generate LLM Response
         (async () => {

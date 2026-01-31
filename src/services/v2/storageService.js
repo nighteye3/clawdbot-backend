@@ -35,13 +35,19 @@ const createChat = (userId, title = "New Chat") => {
 
     // Update Index
     const index = getChatIndex(userId);
-    const newChatSummary = { id: chatId, title, created_at: timestamp };
+    const newChatSummary = { 
+        id: chatId, 
+        user_id: userId, // Added to match Rust ChatResponse
+        title, 
+        created_at: timestamp 
+    };
     index.push(newChatSummary);
     fs.writeFileSync(path.join(base, 'index.json'), JSON.stringify(index, null, 2));
 
     // Create Chat File
     const chatData = {
         id: chatId,
+        user_id: userId,
         title,
         created_at: timestamp,
         messages: []
@@ -77,8 +83,9 @@ const appendMessage = (userId, chatId, role, content) => {
 
     const newMessage = {
         id: msgId,
+        chat_id: chatId, // Added to match Rust MessageResponse
         content,
-        role: role, // 'user' or 'model'
+        role: role, 
         created_at: timestamp,
         is_assistant: role === 'model'
     };
