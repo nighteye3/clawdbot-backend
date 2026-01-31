@@ -43,6 +43,14 @@
       "role": "user",
       "created_at": "2026-01-31T23:19:12.058Z",
       "is_assistant": false
+    },
+    {
+      "id": "18190393-1e47-43d6-a07f-414bf45ab458",
+      "chat_id": "4a0f480d-b074-4b91-b39d-6f6dbecb1eab",
+      "content": "Okay Anukul. It's good to know you like pasta! Is there anything else I can help you with today?\n",
+      "role": "model",
+      "created_at": "2026-01-31T23:19:12.585Z",
+      "is_assistant": true
     }
   ]
 }
