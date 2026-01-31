@@ -137,9 +137,9 @@ const getFullContext = (userId, chatId) => {
 
         const otherChatMsgs = getChatMessages(userId, chatSummary.id);
         if (otherChatMsgs.length > 0) {
-            // Take last 3 messages only to save tokens
-            const recent = otherChatMsgs.slice(-3).map(m => `[${m.role.toUpperCase()}]: ${m.content}`).join(" | ");
-            globalRecall += `\n- In chat "${chatSummary.title}": ${recent}`;
+            // Full Compilation Mode: Read ALL messages from other chats
+            const conversation = otherChatMsgs.map(m => `[${m.role.toUpperCase()}]: ${m.content}`).join("\n");
+            globalRecall += `\n\n--- Start of Chat "${chatSummary.title}" ---\n${conversation}\n--- End of Chat ---`;
         }
     });
 
@@ -147,8 +147,9 @@ const getFullContext = (userId, chatId) => {
 === SYSTEM / PROFILE ===
 ${profileContext}
 
-=== MEMORY FROM OTHER CHATS (GLOBAL RECALL) ===
-${globalRecall ? globalRecall : "No other recent conversations."}
+=== FULL MEMORY FROM ALL OTHER CONVERSATIONS ===
+(Use this information to answer questions about past user details, preferences, or events)
+${globalRecall ? globalRecall : "No other conversations found."}
 
 === CURRENT CHAT HISTORY (FOCUS HERE) ===
 ${currentHistory}
