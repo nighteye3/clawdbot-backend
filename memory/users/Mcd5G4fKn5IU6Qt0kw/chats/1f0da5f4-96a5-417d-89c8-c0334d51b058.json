@@ -11,6 +11,14 @@
       "role": "user",
       "created_at": "2026-01-31T23:19:27.569Z",
       "is_assistant": false
+    },
+    {
+      "id": "314335db-39d2-4cc1-aa99-8b7ddde618c3",
+      "chat_id": "1f0da5f4-96a5-417d-89c8-c0334d51b058",
+      "content": "You like to eat pizza, Sarandha.\n",
+      "role": "model",
+      "created_at": "2026-01-31T23:19:27.984Z",
+      "is_assistant": true
     }
   ]
 }
