@@ -27,6 +27,14 @@
       "role": "user",
       "created_at": "2026-01-31T23:17:39.770Z",
       "is_assistant": false
+    },
+    {
+      "id": "8ad3d307-9157-4583-95b5-dfaf8a592dc0",
+      "chat_id": "4a0f480d-b074-4b91-b39d-6f6dbecb1eab",
+      "content": "Hello Anukul! How can I help you today?\n",
+      "role": "model",
+      "created_at": "2026-01-31T23:17:40.234Z",
+      "is_assistant": true
     }
   ]
 }
