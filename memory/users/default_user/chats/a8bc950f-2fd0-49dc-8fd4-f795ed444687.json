@@ -11,6 +11,14 @@
       "role": "user",
       "created_at": "2026-01-31T23:00:50.266Z",
       "is_assistant": false
+    },
+    {
+      "id": "100455e0-7c19-4a22-84ca-3b09fcdc5f0a",
+      "chat_id": "a8bc950f-2fd0-49dc-8fd4-f795ed444687",
+      "content": "Based on our conversation history, you have told me your name in a previous conversation \"hello\", and it is Anukul.\n",
+      "role": "model",
+      "created_at": "2026-01-31T23:00:50.795Z",
+      "is_assistant": true
     }
   ]
 }
