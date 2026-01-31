@@ -112,22 +112,47 @@ const appendMessage = (userId, chatId, role, content) => {
     return newMessage;
 };
 
-// 5. Get Context (Profile + Current Chat)
+// 5. Get Context (Profile + Current Chat + Global Recall)
 const getFullContext = (userId, chatId) => {
-    const { base } = getUserDir(userId);
+    const { base, chats } = getUserDir(userId);
     
-    // Load Profile Context
+    // A. Load Profile Context (Manual or extracted facts)
     let profileContext = "";
     const profilePath = path.join(base, 'profile.md');
     if (fs.existsSync(profilePath)) {
         profileContext = fs.readFileSync(profilePath, 'utf8');
     }
 
-    // Load Chat History
-    const messages = getChatMessages(userId, chatId);
-    const history = messages.map(m => `${m.role.toUpperCase()}: ${m.content}`).join('\n');
+    // B. Load Current Chat History
+    const currentMessages = getChatMessages(userId, chatId);
+    const currentHistory = currentMessages.map(m => `${m.role.toUpperCase()}: ${m.content}`).join('\n');
 
-    return `SYSTEM CONTEXT:\n${profileContext}\n\nCHAT HISTORY:\n${history}`;
+    // C. Load Global Recall (Last 3 messages from ALL other chats)
+    // This solves "What is my name" from previous chats
+    const chatIndex = getChatIndex(userId);
+    let globalRecall = "";
+    
+    chatIndex.forEach(chatSummary => {
+        if (chatSummary.id === chatId) return; // Skip current chat
+
+        const otherChatMsgs = getChatMessages(userId, chatSummary.id);
+        if (otherChatMsgs.length > 0) {
+            // Take last 3 messages only to save tokens
+            const recent = otherChatMsgs.slice(-3).map(m => `[${m.role.toUpperCase()}]: ${m.content}`).join(" | ");
+            globalRecall += `\n- In chat "${chatSummary.title}": ${recent}`;
+        }
+    });
+
+    return `
+=== SYSTEM / PROFILE ===
+${profileContext}
+
+=== MEMORY FROM OTHER CHATS (GLOBAL RECALL) ===
+${globalRecall ? globalRecall : "No other recent conversations."}
+
+=== CURRENT CHAT HISTORY (FOCUS HERE) ===
+${currentHistory}
+`;
 };
 
 // 6. Update Chat Title
