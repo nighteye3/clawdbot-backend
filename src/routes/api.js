@@ -1,37 +1,39 @@
 const express = require('express');
 const router = express.Router();
-const authenticateToken = require('../middleware/auth');
+// const authenticateToken = require('../middleware/auth'); // Disabled for Tauri compatibility
 const storage = require('../services/v2/storageService');
 const { eventBus, formatSSE } = require('../services/v2/sseService');
 const llmService = require('../services/llmService');
 
+const DEFAULT_USER = "default_user"; // Hardcoded user for no-auth mode
+
 // 1. GET /history - Load all chats
-router.get('/history', authenticateToken, (req, res) => {
+router.get('/history', (req, res) => {
     try {
-        const userId = req.user.user.username || req.user.user.id;
+        const userId = DEFAULT_USER;
         const history = storage.getChatIndex(userId);
-        res.json(history); // Tauri expects: Promise<any> (Array)
+        res.json(history); 
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
 
 // 2. POST /chat - Create new chat
-router.post('/chat', authenticateToken, (req, res) => {
+router.post('/chat', (req, res) => {
     try {
-        const userId = req.user.user.username || req.user.user.id;
+        const userId = DEFAULT_USER;
         const { title } = req.body;
         const newChat = storage.createChat(userId, title || 'New Chat');
-        res.json(newChat); // Tauri expects: { id, title, ... }
+        res.json(newChat); 
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
 
 // 3. POST /chat/ask - Handle User Message (Async LLM)
-router.post('/chat/ask', authenticateToken, async (req, res) => {
+router.post('/chat/ask', async (req, res) => {
     try {
-        const userId = req.user.user.username || req.user.user.id;
+        const userId = DEFAULT_USER;
         const { chat_id, content } = req.body;
 
         if (!chat_id || !content) return res.status(400).json({ error: "Missing fields" });
@@ -41,8 +43,7 @@ router.post('/chat/ask', authenticateToken, async (req, res) => {
         
         // A2. Auto-Update Title (if it's the first actual message)
         const chatMsgs = storage.getChatMessages(userId, chat_id);
-        if (chatMsgs.length <= 1) { // 1 because we just added the user message
-            // Truncate to ~30 chars
+        if (chatMsgs.length <= 1) { 
             const newTitle = content.length > 30 ? content.substring(0, 30) + '...' : content;
             storage.updateChatTitle(userId, chat_id, newTitle);
         }
@@ -50,7 +51,7 @@ router.post('/chat/ask', authenticateToken, async (req, res) => {
         // B. Emit User Message to SSE (so it appears in UI)
         eventBus.emit(`chat:${chat_id}`, userMsg);
 
-        // C. Reply Immediately (Tauri expects Promise<void>)
+        // C. Reply Immediately (202 Accepted)
         res.status(202).send();
 
         // D. Background: Generate LLM Response
@@ -78,9 +79,9 @@ router.post('/chat/ask', authenticateToken, async (req, res) => {
 });
 
 // 4. GET /chat/:id - SSE Stream
-router.get('/chat/:id', authenticateToken, (req, res) => {
+router.get('/chat/:id', (req, res) => {
     const chatId = req.params.id;
-    const userId = req.user.user.username || req.user.user.id;
+    const userId = DEFAULT_USER;
 
     // Headers for SSE
     res.setHeader('Content-Type', 'text/event-stream');
@@ -101,7 +102,6 @@ router.get('/chat/:id', authenticateToken, (req, res) => {
     eventBus.on(`chat:${chatId}`, listener);
 
     // Keep-Alive Heartbeat (every 15s)
-    // Matches Rust's keep_alive logic to prevent connection drop
     const keepAliveInterval = setInterval(() => {
         res.write(': keep-alive\n\n');
     }, 15000);
