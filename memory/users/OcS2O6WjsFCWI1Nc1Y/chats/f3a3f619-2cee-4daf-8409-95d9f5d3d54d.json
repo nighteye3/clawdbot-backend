@@ -11,6 +11,14 @@
       "role": "user",
       "created_at": "2026-01-31T23:17:46.590Z",
       "is_assistant": false
+    },
+    {
+      "id": "3990eb96-d643-4a63-85c1-db203aa4f0a5",
+      "chat_id": "f3a3f619-2cee-4daf-8409-95d9f5d3d54d",
+      "content": "Your name is Anukul.\n",
+      "role": "model",
+      "created_at": "2026-01-31T23:17:47.145Z",
+      "is_assistant": true
     }
   ]
 }
