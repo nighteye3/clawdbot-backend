@@ -1,7 +1,16 @@
 {
   "id": "98c386d9-a0bb-46ea-9452-fd46627ea539",
   "user_id": "OcS2O6WjsFCWI1Nc1Y",
-  "title": "new chat",
+  "title": "what do i like to eat?",
   "created_at": "2026-01-31T23:19:35.809Z",
-  "messages": []
+  "messages": [
+    {
+      "id": "f54bb8f8-588f-4af0-a8ce-f18a795b8318",
+      "chat_id": "98c386d9-a0bb-46ea-9452-fd46627ea539",
+      "content": "what do i like to eat?",
+      "role": "user",
+      "created_at": "2026-01-31T23:19:36.159Z",
+      "is_assistant": false
+    }
+  ]
 }
