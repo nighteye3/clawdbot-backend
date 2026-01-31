@@ -14,10 +14,15 @@ const getUserDir = (userId) => {
     const dir = path.join(config.MEMORY_DIR, userId);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     
+    // JSON Chats Directory
     const chatsDir = path.join(dir, 'chats');
     if (!fs.existsSync(chatsDir)) fs.mkdirSync(chatsDir, { recursive: true });
+
+    // MD Chats Directory
+    const logsDir = path.join(dir, 'logs');
+    if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir, { recursive: true });
     
-    return { base: dir, chats: chatsDir };
+    return { base: dir, chats: chatsDir, logs: logsDir };
 };
 
 // 1. Load Chat History (List of all chats)
@@ -30,7 +35,7 @@ const getChatIndex = (userId) => {
 
 // 2. Create New Chat
 const createChat = (userId, title = "New Chat") => {
-    const { base, chats } = getUserDir(userId);
+    const { base, chats, logs } = getUserDir(userId);
     const chatId = uuidv4();
     const timestamp = new Date().toISOString();
 
@@ -45,7 +50,7 @@ const createChat = (userId, title = "New Chat") => {
     index.push(newChatSummary);
     fs.writeFileSync(path.join(base, 'index.json'), JSON.stringify(index, null, 2));
 
-    // Create Chat File
+    // Create Chat File (JSON)
     const chatData = {
         id: chatId,
         user_id: userId,
@@ -55,8 +60,8 @@ const createChat = (userId, title = "New Chat") => {
     };
     fs.writeFileSync(path.join(chats, `${chatId}.json`), JSON.stringify(chatData, null, 2));
     
-    // Create Markdown Log
-    fs.writeFileSync(path.join(chats, `${chatId}.md`), `# Chat: ${title}\nID: ${chatId}\nDate: ${timestamp}\n\n`);
+    // Create Markdown Log (MD)
+    fs.writeFileSync(path.join(logs, `${chatId}.md`), `# Chat: ${title}\nID: ${chatId}\nDate: ${timestamp}\n\n`);
 
     // Sync to GitHub
     syncToRemote();
@@ -75,9 +80,9 @@ const getChatMessages = (userId, chatId) => {
 
 // 4. Append Message
 const appendMessage = (userId, chatId, role, content) => {
-    const { chats } = getUserDir(userId);
+    const { chats, logs } = getUserDir(userId);
     const chatPath = path.join(chats, `${chatId}.json`);
-    const mdPath = path.join(chats, `${chatId}.md`);
+    const mdPath = path.join(logs, `${chatId}.md`);
     
     if (!fs.existsSync(chatPath)) return null;
 
