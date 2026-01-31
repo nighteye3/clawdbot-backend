@@ -1,7 +1,16 @@
 {
   "id": "ab6e839e-47d4-4423-910a-43e8e3c2c4d0",
   "user_id": "default_user",
-  "title": "new chat",
+  "title": "checking all chats",
   "created_at": "2026-01-31T22:54:07.309Z",
-  "messages": []
+  "messages": [
+    {
+      "id": "9efd776e-7802-4d4b-8f97-01336207dc38",
+      "chat_id": "ab6e839e-47d4-4423-910a-43e8e3c2c4d0",
+      "content": "checking all chats",
+      "role": "user",
+      "created_at": "2026-01-31T22:54:07.698Z",
+      "is_assistant": false
+    }
+  ]
 }
