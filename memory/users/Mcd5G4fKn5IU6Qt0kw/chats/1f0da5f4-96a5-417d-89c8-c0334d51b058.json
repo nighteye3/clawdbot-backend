@@ -27,6 +27,14 @@
       "role": "user",
       "created_at": "2026-01-31T23:19:58.076Z",
       "is_assistant": false
+    },
+    {
+      "id": "7be6c7d2-9c09-42f5-87b8-4731f4509977",
+      "chat_id": "1f0da5f4-96a5-417d-89c8-c0334d51b058",
+      "content": "I only know what you've told me, Sarandha. I don't have any information about what other users like to eat.\n",
+      "role": "model",
+      "created_at": "2026-01-31T23:19:58.538Z",
+      "is_assistant": true
     }
   ]
 }
