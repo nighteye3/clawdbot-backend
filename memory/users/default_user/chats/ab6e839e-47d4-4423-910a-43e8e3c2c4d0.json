@@ -27,6 +27,14 @@
       "role": "user",
       "created_at": "2026-01-31T22:56:50.910Z",
       "is_assistant": false
+    },
+    {
+      "id": "5133f0c3-7f43-4aac-9709-8bf515788e78",
+      "chat_id": "ab6e839e-47d4-4423-910a-43e8e3c2c4d0",
+      "content": "I do not have access to personal information and cannot determine your name.\n",
+      "role": "model",
+      "created_at": "2026-01-31T22:56:51.315Z",
+      "is_assistant": true
     }
   ]
 }
