@@ -19,6 +19,14 @@
       "role": "model",
       "created_at": "2026-01-31T23:19:36.587Z",
       "is_assistant": true
+    },
+    {
+      "id": "7e65239b-0877-4d91-84bc-586de9f76dda",
+      "chat_id": "98c386d9-a0bb-46ea-9452-fd46627ea539",
+      "content": "what does sarandha like to eat?",
+      "role": "user",
+      "created_at": "2026-01-31T23:19:46.056Z",
+      "is_assistant": false
     }
   ]
 }
