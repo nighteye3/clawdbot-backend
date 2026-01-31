@@ -11,6 +11,14 @@
       "role": "user",
       "created_at": "2026-01-31T23:19:36.159Z",
       "is_assistant": false
+    },
+    {
+      "id": "be0c5e79-4487-4062-8e12-ffe141f79aa9",
+      "chat_id": "98c386d9-a0bb-46ea-9452-fd46627ea539",
+      "content": "You like to eat pasta.\n",
+      "role": "model",
+      "created_at": "2026-01-31T23:19:36.587Z",
+      "is_assistant": true
     }
   ]
 }
