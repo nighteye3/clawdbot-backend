@@ -43,6 +43,14 @@
       "role": "user",
       "created_at": "2026-02-02T05:42:05.095Z",
       "is_assistant": false
+    },
+    {
+      "id": "05634f7f-044c-468c-b9c7-ab31069d6001",
+      "chat_id": "91a99ae2-552c-4167-8d54-e197019e33bb",
+      "content": "Okay Anuna, based on your preferences for dining in Palm Jumeirah, Downtown, or DIFC, with a quiet vibe, within the 200-350 AED budget range, and for a leisure time, here are a few places known for their pizza:\n\n*   **Palm Jumeirah:**\n    *   **The Locale:** While I don't have specific details on quietness, they do offer a good selection of pizzas. It would be best to check recent reviews to confirm the current ambiance.\n*   **Downtown:**\n    *   **GAIA:** Might be on the higher end of your budget, but sometimes has special pizza offerings. Check their menu and prices.\n*   **DIFC:**\n    *   **Roberto's:** Upscale Italian, and potentially exceeding your budget. Verify their pizza options and prices beforehand.\n\nI recommend checking online menus and recent reviews to ensure the vibe and prices align with your preferences before making a decision.\n",
+      "role": "model",
+      "created_at": "2026-02-02T05:42:07.386Z",
+      "is_assistant": true
     }
   ]
 }
