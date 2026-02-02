@@ -1,0 +1,24 @@
+{
+  "id": "ebe06b33-6ced-4ef2-a99a-747e7ba723ea",
+  "user_id": "gVmPmI8MfC8vu1cVJe",
+  "title": "hello",
+  "created_at": "2026-02-02T09:03:45.998Z",
+  "messages": [
+    {
+      "id": "30ff1d85-dc15-46e4-b2a5-89d2b394dd1d",
+      "chat_id": "ebe06b33-6ced-4ef2-a99a-747e7ba723ea",
+      "content": "hello",
+      "role": "user",
+      "created_at": "2026-02-02T09:03:46.650Z",
+      "is_assistant": false
+    },
+    {
+      "id": "d086c3cf-05e7-447f-869f-49bef453dd41",
+      "chat_id": "ebe06b33-6ced-4ef2-a99a-747e7ba723ea",
+      "content": "Hello Anuna, how can I help you today?\n",
+      "role": "model",
+      "created_at": "2026-02-02T09:03:47.406Z",
+      "is_assistant": true
+    }
+  ]
+}
