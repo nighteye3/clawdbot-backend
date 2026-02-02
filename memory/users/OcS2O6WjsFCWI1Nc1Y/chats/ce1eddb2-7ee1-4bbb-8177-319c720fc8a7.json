@@ -1,7 +1,16 @@
 {
   "id": "ce1eddb2-7ee1-4bbb-8177-319c720fc8a7",
   "user_id": "OcS2O6WjsFCWI1Nc1Y",
-  "title": "new chat",
+  "title": "do you know my name?",
   "created_at": "2026-02-02T05:14:32.519Z",
-  "messages": []
+  "messages": [
+    {
+      "id": "c87ce60d-3e93-4bf8-baf0-f54a1cdfe6f7",
+      "chat_id": "ce1eddb2-7ee1-4bbb-8177-319c720fc8a7",
+      "content": "do you know my name?",
+      "role": "user",
+      "created_at": "2026-02-02T05:14:33.774Z",
+      "is_assistant": false
+    }
+  ]
 }
