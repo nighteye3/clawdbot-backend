@@ -75,6 +75,14 @@
       "role": "user",
       "created_at": "2026-02-02T08:47:38.470Z",
       "is_assistant": false
+    },
+    {
+      "id": "4fbb76eb-ddc7-4493-bc2f-db8a766322bb",
+      "chat_id": "91a99ae2-552c-4167-8d54-e197019e33bb",
+      "content": "Okay Anuna, based on your preferences for dining in Palm Jumeirah, Downtown, or DIFC, with a quiet vibe, within the 200-350 AED budget range, and for a leisure time, here are a few restaurants that might be a good fit for pesto pasta:\n\n*   **Palm Jumeirah:**\n    *   **The Locale:** Check their menu for pesto pasta options. I'd still recommend looking at recent reviews to make sure it has a quiet vibe.\n*   **Downtown:**\n    *   Look for Italian restaurants in the area, and check their menus online to see if they offer pesto pasta within your budget.\n*   **DIFC:**\n    *   Similar to Downtown, explore Italian restaurants and check their menus online to confirm pesto pasta options and prices.\n\nIt is always a good idea to look at recent reviews to make sure that the place's vibe matches your desire for a quiet dining experience. Enjoy your pesto pasta!\n",
+      "role": "model",
+      "created_at": "2026-02-02T08:47:40.504Z",
+      "is_assistant": true
     }
   ]
 }
