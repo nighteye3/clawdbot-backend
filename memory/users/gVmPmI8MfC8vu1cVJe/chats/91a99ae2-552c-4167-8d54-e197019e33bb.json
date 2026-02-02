@@ -51,6 +51,14 @@
       "role": "model",
       "created_at": "2026-02-02T05:42:07.386Z",
       "is_assistant": true
+    },
+    {
+      "id": "66ac78dc-f21e-4811-8ba7-47e6580c1ea6",
+      "chat_id": "91a99ae2-552c-4167-8d54-e197019e33bb",
+      "content": "hi",
+      "role": "user",
+      "created_at": "2026-02-02T08:47:20.529Z",
+      "is_assistant": false
     }
   ]
 }
