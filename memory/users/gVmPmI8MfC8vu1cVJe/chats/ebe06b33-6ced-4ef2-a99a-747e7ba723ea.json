@@ -51,6 +51,54 @@
       "role": "model",
       "created_at": "2026-02-02T09:25:46.756Z",
       "is_assistant": true
+    },
+    {
+      "id": "77e97231-d986-4622-a418-4c90e626ecc5",
+      "chat_id": "ebe06b33-6ced-4ef2-a99a-747e7ba723ea",
+      "content": "i meant yes for my preferences",
+      "role": "user",
+      "created_at": "2026-02-02T09:26:01.860Z",
+      "is_assistant": false
+    },
+    {
+      "id": "3d2425ef-a294-411f-a2e4-ae16805dd42d",
+      "chat_id": "ebe06b33-6ced-4ef2-a99a-747e7ba723ea",
+      "content": "Okay Anuna, thanks for clarifying! To confirm, you want me to suggest restaurants based on your existing preferences, which are:\n\n*   **AREA**: Palm Jumeirah, Downtown, DIFC\n*   **VIBE LOUDNESS**: Quiet\n*   **INDOOR OUTDOOR**: Any\n*   **BUDGET RANGE**: 200-350\n*   **BEST TIME**: Leisure\n\nCould you please confirm which of these areas (Palm Jumeirah, Downtown, or DIFC) you're interested in right now so I can give you the most relevant recommendations?\n",
+      "role": "model",
+      "created_at": "2026-02-02T09:26:03.344Z",
+      "is_assistant": true
+    },
+    {
+      "id": "deebebf1-bbaf-41d8-a837-92cca4253951",
+      "chat_id": "ebe06b33-6ced-4ef2-a99a-747e7ba723ea",
+      "content": "yes",
+      "role": "user",
+      "created_at": "2026-02-02T09:26:08.629Z",
+      "is_assistant": false
+    },
+    {
+      "id": "6fbfa538-8721-4e3c-a5df-2eb230eedb36",
+      "chat_id": "ebe06b33-6ced-4ef2-a99a-747e7ba723ea",
+      "content": "Okay Anuna, let's clarify again. When you say \"yes,\" do you mean you want recommendations based on **all** of your preferred areas (Palm Jumeirah, Downtown, and DIFC)? Or would you like me to focus on one specific area from that list? Knowing the specific area will help me narrow down the best restaurant suggestions for you!\n",
+      "role": "model",
+      "created_at": "2026-02-02T09:26:09.826Z",
+      "is_assistant": true
+    },
+    {
+      "id": "0502151c-dcdb-42c9-8c4c-c4c7b82d9e7e",
+      "chat_id": "ebe06b33-6ced-4ef2-a99a-747e7ba723ea",
+      "content": "i am in dubai downtown",
+      "role": "user",
+      "created_at": "2026-02-02T09:26:14.589Z",
+      "is_assistant": false
+    },
+    {
+      "id": "aea93d98-636c-4dea-9d02-61bac14e24bb",
+      "chat_id": "ebe06b33-6ced-4ef2-a99a-747e7ba723ea",
+      "content": "Okay Anuna, since you're in Downtown Dubai and looking for restaurants, I can give you some recommendations based on your preferences: a quiet vibe, a budget range of 200-350 AED, any indoor/outdoor setting, and a leisure time.\n\nHere are a few options to consider in Downtown Dubai:\n\n*   Look for Italian restaurants in the area. Many offer a quiet atmosphere, especially during off-peak hours. Check their menus online to see if they have options within your budget.\n*   Some restaurants in hotels might offer a more relaxed and quiet environment. Browse hotel restaurants in Downtown Dubai and check their menus and reviews.\n\nI recommend checking online menus and recent reviews to ensure the vibe and prices align with your preferences before making a decision. Enjoy!\n",
+      "role": "model",
+      "created_at": "2026-02-02T09:26:16.318Z",
+      "is_assistant": true
     }
   ]
 }
