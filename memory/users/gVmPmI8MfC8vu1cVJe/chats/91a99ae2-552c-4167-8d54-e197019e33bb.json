@@ -1,7 +1,16 @@
 {
   "id": "91a99ae2-552c-4167-8d54-e197019e33bb",
   "user_id": "gVmPmI8MfC8vu1cVJe",
-  "title": "new chat",
+  "title": "hey what is my name?",
   "created_at": "2026-02-02T05:39:38.576Z",
-  "messages": []
+  "messages": [
+    {
+      "id": "64f5cc09-5749-425e-8de1-9845a8d77739",
+      "chat_id": "91a99ae2-552c-4167-8d54-e197019e33bb",
+      "content": "hey what is my name?",
+      "role": "user",
+      "created_at": "2026-02-02T05:39:39.146Z",
+      "is_assistant": false
+    }
+  ]
 }
