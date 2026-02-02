@@ -1,7 +1,16 @@
 {
   "id": "d943fb6d-92b0-48a5-89e8-f23095d8b23a",
   "user_id": "gVmPmI8MfC8vu1cVJe",
-  "title": "new chat",
+  "title": "hi",
   "created_at": "2026-02-02T08:59:40.498Z",
-  "messages": []
+  "messages": [
+    {
+      "id": "e9531eed-40d3-412e-be2e-9c1d749df9a4",
+      "chat_id": "d943fb6d-92b0-48a5-89e8-f23095d8b23a",
+      "content": "hi",
+      "role": "user",
+      "created_at": "2026-02-02T08:59:43.309Z",
+      "is_assistant": false
+    }
+  ]
 }
