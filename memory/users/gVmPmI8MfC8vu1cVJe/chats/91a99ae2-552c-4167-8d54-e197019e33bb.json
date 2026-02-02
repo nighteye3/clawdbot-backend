@@ -67,6 +67,14 @@
       "role": "model",
       "created_at": "2026-02-02T08:47:21.096Z",
       "is_assistant": true
+    },
+    {
+      "id": "290d3b08-036b-4ea4-bb21-cad9b178b2a8",
+      "chat_id": "91a99ae2-552c-4167-8d54-e197019e33bb",
+      "content": "tell me some cool restaurant for eating pesto pasta",
+      "role": "user",
+      "created_at": "2026-02-02T08:47:38.470Z",
+      "is_assistant": false
     }
   ]
 }
