@@ -35,6 +35,14 @@
       "role": "model",
       "created_at": "2026-02-02T05:41:25.745Z",
       "is_assistant": true
+    },
+    {
+      "id": "7cedd3f1-f9bc-449f-8259-c616da7657a2",
+      "chat_id": "91a99ae2-552c-4167-8d54-e197019e33bb",
+      "content": "tell me some nice place to eat pizza",
+      "role": "user",
+      "created_at": "2026-02-02T05:42:05.095Z",
+      "is_assistant": false
     }
   ]
 }
