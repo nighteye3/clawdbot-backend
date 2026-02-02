@@ -11,6 +11,14 @@
       "role": "user",
       "created_at": "2026-02-02T08:59:43.309Z",
       "is_assistant": false
+    },
+    {
+      "id": "68fd8d3d-3a6c-47c9-8c19-81c6dc8ba385",
+      "chat_id": "d943fb6d-92b0-48a5-89e8-f23095d8b23a",
+      "content": "Hi Anuna, how can I help you today?\n",
+      "role": "model",
+      "created_at": "2026-02-02T08:59:43.923Z",
+      "is_assistant": true
     }
   ]
 }
