@@ -127,19 +127,21 @@ const getFullContext = (userId, chatId) => {
     const currentMessages = getChatMessages(userId, chatId);
     const currentHistory = currentMessages.map(m => `${m.role.toUpperCase()}: ${m.content}`).join('\n');
 
-    // C. Load Global Recall (Last 3 messages from ALL other chats)
-    // This solves "What is my name" from previous chats
+    // C. Load Global Recall (Optimized: Last 5 chats, Last 10 messages each)
     const chatIndex = getChatIndex(userId);
+    
+    // Sort chats by last update/creation (assuming index order is roughly chronological, or we sort by id/date)
+    // For now, we take the last 5 from the list (most recent usually at the end)
+    const recentChats = chatIndex.filter(c => c.id !== chatId).slice(-5);
+    
     let globalRecall = "";
     
-    chatIndex.forEach(chatSummary => {
-        if (chatSummary.id === chatId) return; // Skip current chat
-
+    recentChats.forEach(chatSummary => {
         const otherChatMsgs = getChatMessages(userId, chatSummary.id);
         if (otherChatMsgs.length > 0) {
-            // Full Compilation Mode: Read ALL messages from other chats
-            const conversation = otherChatMsgs.map(m => `[${m.role.toUpperCase()}]: ${m.content}`).join("\n");
-            globalRecall += `\n\n--- Start of Chat "${chatSummary.title}" ---\n${conversation}\n--- End of Chat ---`;
+            // Optimized: Take last 10 messages only
+            const recent = otherChatMsgs.slice(-10).map(m => `[${m.role.toUpperCase()}]: ${m.content}`).join("\n");
+            globalRecall += `\n\n--- Start of Recent Chat "${chatSummary.title}" ---\n${recent}\n--- End of Chat ---`;
         }
     });
 
@@ -147,9 +149,9 @@ const getFullContext = (userId, chatId) => {
 === SYSTEM / PROFILE (HIGHEST PRIORITY) ===
 ${profileContext}
 
-=== FULL MEMORY FROM ALL OTHER CONVERSATIONS ===
+=== MEMORY FROM RECENT CONVERSATIONS (Last 5 Chats) ===
 (Use this information to answer questions about past user details, preferences, or events)
-${globalRecall ? globalRecall : "No other conversations found."}
+${globalRecall ? globalRecall : "No other recent conversations found."}
 
 === CURRENT CHAT HISTORY (FOCUS HERE) ===
 ${currentHistory}
