@@ -27,6 +27,14 @@
       "role": "user",
       "created_at": "2026-02-02T05:41:24.842Z",
       "is_assistant": false
+    },
+    {
+      "id": "cc731e1b-ca62-44d6-b95f-304debaf319c",
+      "chat_id": "91a99ae2-552c-4167-8d54-e197019e33bb",
+      "content": "Okay Anuna, here are your dining preferences:\n\n*   **AREA**: Palm Jumeirah, Downtown, DIFC\n*   **VIBE LOUDNESS**: Quiet\n*   **INDOOR OUTDOOR**: Any\n*   **BUDGET RANGE**: 200-350\n*   **BEST TIME**: Leisure\n",
+      "role": "model",
+      "created_at": "2026-02-02T05:41:25.745Z",
+      "is_assistant": true
     }
   ]
 }
