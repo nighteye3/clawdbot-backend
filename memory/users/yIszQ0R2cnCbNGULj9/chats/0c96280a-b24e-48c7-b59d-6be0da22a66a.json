@@ -51,6 +51,22 @@
       "role": "model",
       "created_at": "2026-02-03T10:23:36.185Z",
       "is_assistant": true
+    },
+    {
+      "id": "fa3b9eff-e65b-4339-ac52-0d711a164a5f",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "how many users are on clawdbook now?",
+      "role": "user",
+      "created_at": "2026-02-03T10:24:35.129Z",
+      "is_assistant": false
+    },
+    {
+      "id": "bf980bf2-260e-4c52-97a1-3fe6d17a9a5c",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "I do not have access to that information about Clawdbook's users. I am an AI assistant and do not have access to real-time data about specific platforms.\n",
+      "role": "model",
+      "created_at": "2026-02-03T10:24:35.913Z",
+      "is_assistant": true
     }
   ]
 }
