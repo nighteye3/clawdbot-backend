@@ -67,6 +67,22 @@
       "role": "model",
       "created_at": "2026-02-03T10:24:35.913Z",
       "is_assistant": true
+    },
+    {
+      "id": "8606b36f-d98c-4216-9d4f-8fbfedba3875",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "don't you have internet access?",
+      "role": "user",
+      "created_at": "2026-02-03T10:26:01.464Z",
+      "is_assistant": false
+    },
+    {
+      "id": "0fbdebfd-2813-416b-b574-e27d7ca00445",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "As an AI assistant, I do not have direct internet access in the way a web browser does. I can process and understand information from the real world through the knowledge I was trained on, but I cannot browse the internet in real-time.\n",
+      "role": "model",
+      "created_at": "2026-02-03T10:26:02.306Z",
+      "is_assistant": true
     }
   ]
 }
