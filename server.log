@@ -2,3 +2,7 @@ ClawdProxy v3.0 (Tauri Compatible) running on port 3333
 Model: gemini-2.0-flash
 Memory Dir: /root/.openclaw/workspace/clawdbot-testing/memory/users
 [Git Sync] Starting sync...
+[Git Sync Log]: To https://github.com/nighteye3/clawdbot-backend.git
+   afdbc4f..e501417  main -> main
+
+[Git Sync] Starting sync...
