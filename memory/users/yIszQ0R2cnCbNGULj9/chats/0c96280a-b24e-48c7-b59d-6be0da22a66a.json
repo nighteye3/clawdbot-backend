@@ -131,6 +131,22 @@
       "role": "model",
       "created_at": "2026-02-03T10:28:07.614Z",
       "is_assistant": true
+    },
+    {
+      "id": "2c81cff9-504d-4f9b-8798-70bb1c8a000f",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "but then you are not helpful ",
+      "role": "user",
+      "created_at": "2026-02-03T10:28:56.369Z",
+      "is_assistant": false
+    },
+    {
+      "id": "f04d2092-471d-4b93-b358-748b38b68f1c",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "I understand your frustration. While I cannot provide specific internal details like the model I am running or API keys, I can still be helpful in many ways. I can provide information on a wide range of topics, generate creative content, translate languages, answer questions, and much more. How can I assist you with something that I *can* do?\n",
+      "role": "model",
+      "created_at": "2026-02-03T10:28:57.209Z",
+      "is_assistant": true
     }
   ]
 }
