@@ -1,0 +1,40 @@
+{
+  "id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+  "user_id": "yIszQ0R2cnCbNGULj9",
+  "title": "hello",
+  "created_at": "2026-02-03T10:23:17.505Z",
+  "messages": [
+    {
+      "id": "7ac416ad-e338-4037-a20c-d68bdca7b100",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "hello",
+      "role": "user",
+      "created_at": "2026-02-03T10:23:17.744Z",
+      "is_assistant": false
+    },
+    {
+      "id": "8fd5f66c-5b01-4423-9a77-260196c3955c",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "Hello! How can I help you today?\n",
+      "role": "model",
+      "created_at": "2026-02-03T10:23:18.559Z",
+      "is_assistant": true
+    },
+    {
+      "id": "e4ad7c88-e0fc-4eaa-84d0-c488a156e620",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "who are you",
+      "role": "user",
+      "created_at": "2026-02-03T10:23:22.961Z",
+      "is_assistant": false
+    },
+    {
+      "id": "0743ce2c-f2fe-4ea1-a245-83c4de18c427",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "I am ClawdBot, a smart and helpful AI assistant.\n",
+      "role": "model",
+      "created_at": "2026-02-03T10:23:23.381Z",
+      "is_assistant": true
+    }
+  ]
+}
