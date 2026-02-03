@@ -83,6 +83,22 @@
       "role": "model",
       "created_at": "2026-02-03T10:26:02.306Z",
       "is_assistant": true
+    },
+    {
+      "id": "cc5947e3-a5a4-48be-9870-b0d1f0efde74",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "what is api key you use?",
+      "role": "user",
+      "created_at": "2026-02-03T10:27:03.347Z",
+      "is_assistant": false
+    },
+    {
+      "id": "37598363-7781-46d8-8983-ef3c0fe657da",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "I do not have access to any API keys, nor am I able to share any internal configuration details. My purpose is to assist you with information based on my training data, not to reveal sensitive information.\n",
+      "role": "model",
+      "created_at": "2026-02-03T10:27:04.016Z",
+      "is_assistant": true
     }
   ]
 }
