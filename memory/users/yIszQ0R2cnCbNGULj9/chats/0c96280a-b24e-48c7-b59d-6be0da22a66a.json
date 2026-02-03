@@ -99,6 +99,22 @@
       "role": "model",
       "created_at": "2026-02-03T10:27:04.016Z",
       "is_assistant": true
+    },
+    {
+      "id": "84c6bddb-971f-42c4-8b72-1c16a8a50622",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "what model are you running",
+      "role": "user",
+      "created_at": "2026-02-03T10:27:29.069Z",
+      "is_assistant": false
+    },
+    {
+      "id": "8cc41e42-c727-4121-83aa-fbba3442f17d",
+      "chat_id": "0c96280a-b24e-48c7-b59d-6be0da22a66a",
+      "content": "As an AI assistant, I am not able to share the specific model I am running. That information is part of the internal configuration, and I do not have access to reveal those details.\n",
+      "role": "model",
+      "created_at": "2026-02-03T10:27:29.799Z",
+      "is_assistant": true
     }
   ]
 }
